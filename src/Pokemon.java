@@ -18,7 +18,7 @@ public class Pokemon {
         this.setNome(nome);
         this.setTipo(tipo);
         this.setTipo2(tipo2);
-        this.setNivel(random.nextInt(49)+1);
+        this.setNivel(random.nextInt(5)+3);
         for(int i = 0; i < 4; ++i) {
             this.nomeAtq = movimentos(random.nextInt(15)+1);
             ataque[i] = this.nomeAtq;

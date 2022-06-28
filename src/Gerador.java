@@ -324,8 +324,6 @@ public class Gerador extends Pokemon{
                 uniqueID[cont] = poke.getNome().hashCode();
             }
 
-        } else {
-            poke.setNivel(80);
         }
         return poke;
     }
