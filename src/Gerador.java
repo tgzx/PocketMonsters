@@ -1,5 +1,7 @@
+import java.util.Random;
+
 public class Gerador extends Pokemon{
-    public static Pokemon[] pkmn = new Pokemon[152];
+    public static Pokemon[] pkmn = new Pokemon[153];
     Pokemon pkmn1 = new Pokemon();
     Pokemon pkmn2 = new Pokemon();
     Pokemon pkmn3 = new Pokemon();
@@ -305,5 +307,26 @@ public class Gerador extends Pokemon{
         pkmn[150] = pkmn150 = new Pokemon(150, "Mewtwo", "Psychic", "-");
         pkmn[151] = pkmn151 = new Pokemon(151, "Mew", "Psychic", "-");
         return pkmn[index];
+    }
+
+    public static Pokemon lendarioComparador(Pokemon poke, Pokemon pokeAnt, int cont) {
+        int teste = 1;
+        Random random = new Random();
+        Gerador pokemon = new Gerador();
+        int[] uniqueID = new int[999999];
+
+        if (poke.getNome().equals(pokeAnt.getNome())) {
+            uniqueID[cont] = poke.getNome().hashCode();
+            uniqueID[cont + 1] = pokeAnt.getNome().hashCode();
+
+            if (uniqueID[cont] == uniqueID[cont + 1]) {
+                poke = pokemon.createPokemons(random.nextInt(150) + 1);
+                uniqueID[cont] = poke.getNome().hashCode();
+            }
+
+        } else {
+            poke.setNivel(80);
+        }
+        return poke;
     }
 }
